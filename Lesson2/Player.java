@@ -1,33 +1,27 @@
+package guessnumber;
+
 public class Player {
-
-    private int result ;
-    private String name;
-
-  /*  public Player( String name) {
-        this.name = name;
-    }*/
-
-    public Player(int result, String name) {
-        this.result = result;
-        this.name = name;
-    }
-
-    public int getResult() {
-        return result;
-    }
-
-    public Player setResult(int result) {
-        this.result = result;
-        return this;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Player setName(String name) {
-        this.name = name;
-        return this;
-    }
+	private String name;
+	private int value;
+	
+	public Player(String name) {
+		this.name = name;
+		this.value = 0;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setValue(int value) {
+		this.value = value;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public int getValue() {
+		return this.value;
+	}
 }
-
