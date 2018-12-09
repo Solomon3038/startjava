@@ -1,3 +1,5 @@
+
+
 import java.util.Scanner;
 
 public class GuessNumber {
@@ -22,12 +24,12 @@ public class GuessNumber {
         while (!winnerWasDetected) {
 
             intNumber(firstPlayer);
-            intNumber( secondPlayer);
+            intNumber(secondPlayer);
 
 
-                guess(firstPlayer);
+            guess(firstPlayer);
 
-                guess(secondPlayer);
+            guess(secondPlayer);
 
         }
 
@@ -36,14 +38,12 @@ public class GuessNumber {
     private int getRandomInRange(int min, int max) {
         return ((int) (Math.random() * (max - min + 1))) + min;
     }
-
-
+    
     private void intNumber(Player player) {
         System.out.print(player.getName() + ", enter your suggestion: ");
         player.setValue(s.nextInt());
 
     }
-
 
     private boolean guess(Player player) {
         if (player.getValue() == randomValue) {
@@ -58,18 +58,5 @@ public class GuessNumber {
     }
 
 }
-	
-	private int getRandomInRange(int min, int max) {
-		return ((int)(Math.random() * (max - min + 1))) + min;
-	}
 
-	private void createPlayers() {
-		Scanner s = new Scanner(System.in);
-		for (int i = 0; i < this.players.length; i++) {
-			String prompt = "Enter your name, player №" + i + ": ";
-			System.out.print(prompt);
-			String userName = s.nextLine();
-			this.players[i] = new Player(userName);
-		}
-	}
-}
+
