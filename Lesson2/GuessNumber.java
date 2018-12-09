@@ -1,53 +1,63 @@
-package guessnumber;
 import java.util.Scanner;
 
-
 public class GuessNumber {
-	private Player[] players;
-	private int rangeStart;
-	private int rangeEnd;
-	
-	public GuessNumber(int playerCnt, int startOfRange, int endOfRange) {
-		this.players = new Player[playerCnt];
-		this.rangeStart = startOfRange;
-		this.rangeEnd = endOfRange;
-	}
-	
-	public void start() {
-		this.createPlayers();
-		int randomValue = this.getRandomInRange(this.rangeStart, this.rangeEnd);
-		Scanner s = new Scanner(System.in);
-		String rangeStr = "We have random integer in range [";
-		rangeStr += this.rangeStart + ", ";
-		rangeStr += this.rangeEnd + "]";
-		System.out.println(rangeStr);
-		while (true) {
-			for (int i = 0; i < this.players.length; i++) {
-				Player currentPlayer = this.players[i];
-				String prompt = currentPlayer.getName() + ", enter your suggestion: ";
-				System.out.print(prompt);
-				int value = s.nextInt();
-				currentPlayer.setValue(value);
-			}
 
-			boolean winnerWasDetected = false;
-			for (int i = 0; i < this.players.length; i++) {
-				Player currentPlayer = this.players[i];
-				int value = currentPlayer.getValue();
-				if (value == randomValue) {
-					System.out.println(currentPlayer.getName() + " is the winner");
-					winnerWasDetected = true;
-				} else if (value > randomValue) {
-					System.out.println(currentPlayer.getName() + " wrote value which is bigger than randomValue");
-				} else {
-					System.out.println(currentPlayer.getName() + " wrote value which is less than randomValue");
-				}
-			}
-			if (winnerWasDetected) {
-				break;
-			}
-		}
-	}
+
+    private Player firstPlayer;
+    private Player secondPlayer;
+    private int randomValue;
+    private boolean winnerWasDetected;
+    Scanner s = new Scanner(System.in);
+
+    public GuessNumber(Player player1, Player player2) {
+        firstPlayer = player1;
+        secondPlayer = player2;
+    }
+
+    public void start() {
+        randomValue = getRandomInRange(0, 100);
+        System.out.println(randomValue);
+        System.out.println("We have random integer in range [" + " 0" + ", " + " 100" + "]");
+
+        while (!winnerWasDetected) {
+
+            intNumber(firstPlayer);
+            intNumber( secondPlayer);
+
+
+                guess(firstPlayer);
+
+                guess(secondPlayer);
+
+        }
+
+    }
+
+    private int getRandomInRange(int min, int max) {
+        return ((int) (Math.random() * (max - min + 1))) + min;
+    }
+
+
+    private void intNumber(Player player) {
+        System.out.print(player.getName() + ", enter your suggestion: ");
+        player.setValue(s.nextInt());
+
+    }
+
+
+    private boolean guess(Player player) {
+        if (player.getValue() == randomValue) {
+            System.out.println(secondPlayer.getName() + " is the winner");
+            winnerWasDetected = true;
+        } else if (player.getValue() > randomValue) {
+            System.out.println(player.getName() + " wrote value which is bigger than randomValue");
+        } else {
+            System.out.println(player.getName() + " wrote value which is less than randomValue");
+        }
+        return false;
+    }
+
+}
 	
 	private int getRandomInRange(int min, int max) {
 		return ((int)(Math.random() * (max - min + 1))) + min;
