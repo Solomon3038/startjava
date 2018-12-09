@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class CalculatorTest {
@@ -6,21 +7,21 @@ public class CalculatorTest {
 
 
         System.out.println("Добро пожаловать в Java калькулятор \n");
-        Scanner Scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
         System.out.println("\n Задайте пожалуйста два числа ");
         int xe;
         int xo;
 
         System.out.print("\n Введите первое число ");
-        xe = Scan.nextInt();
+        xe = scan.nextInt();
 
         System.out.println("\n Введите знак математической операции: (*,/,+,-,%,^)\n  ");
-        String Operation = Scan.next();
+        String Operation = scan.next();
         String EO = "Вы выбрали операцию ";
 
         System.out.print("\n Введите второе число:");
-        xo = Scan.nextInt();
+        xo = scan.nextInt();
 
 
         switch (Operation) {
@@ -43,9 +44,6 @@ public class CalculatorTest {
             default:
                 System.out.println("\n Задайте действительный знаки!");
         }
-
-        Scan.close();
-        System.out.println(" Приложение закрыто");
     }
 
     public static int exponent(int xe, int xo) {
@@ -57,4 +55,5 @@ public class CalculatorTest {
         return result;
     }
 }
+
 
