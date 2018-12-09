@@ -2,10 +2,9 @@ import java.util.Scanner;
 
 public class CalculatorTest {
 
-    public static void main(String[] args) {
+    public void calculate() {
 
-        Exponention exponention = new Exponention();
-        
+
         System.out.println("Добро пожаловать в Java калькулятор \n");
         Scanner Scan = new Scanner(System.in);
 
@@ -39,7 +38,7 @@ public class CalculatorTest {
                 System.out.println(EO + "- \n Результат операции: " + (xe % xo));
                 break;
             case "^":
-                System.out.println(EO + "^ \n Результат операции: " + (exponention.exponent(xe, xo)));
+                System.out.println(EO + "^ \n Результат операции: " + (exponent(xe, xo)));
                 break;
             default:
                 System.out.println("\n Задайте действительный знаки!");
@@ -47,6 +46,15 @@ public class CalculatorTest {
 
         Scan.close();
         System.out.println(" Приложение закрыто");
+    }
+
+    public static int exponent(int xe, int xo) {
+        int result = 1;
+        for (int i = 0; i < xo; i++) {
+            result = result * xe;
+
+        }
+        return result;
     }
 }
 
