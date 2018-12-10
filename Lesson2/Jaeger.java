@@ -1,4 +1,3 @@
-
 public class Jaeger {
     private String modelName;
     private String mark;
@@ -112,4 +111,3 @@ public class Jaeger {
         System.out.println("The Vortex is ready to shoot");
     }
 }
-
