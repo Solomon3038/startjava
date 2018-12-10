@@ -1,44 +1,47 @@
-import java.util.Scanner;
-
 public class Calculator {
+    private char operation;
+    private int numberOne;
+    private int numberTwo;
 
-    Scanner scan = new Scanner(System.in);
-    int numberOne;
-    int numberTwo;
+
+    public void setOperation(char operation) {
+        this.operation = operation;
+    }
+
+    public void setNumberOne(int numberOne) {
+        this.numberOne = numberOne;
+
+    }
+
+    public void setNumberTwo(int numberTwo) {
+        this.numberTwo = numberTwo;
+    }
 
     public void calculate() {
-        System.out.println("Добро пожаловать в Java калькулятор \n");
-        System.out.println("\n Задайте пожалуйста два числа ");
-        System.out.print("\n Введите первое число ");
-        numberOne = scan.nextInt();
-        System.out.println("\n Введите знак математической операции: (*,/,+,-,%,^)\n  ");
-        String operation = scan.next();
         String eo = "Вы выбрали операцию ";
-        System.out.print("\n Введите второе число:");
-        numberTwo = scan.nextInt();
 
         switch (operation) {
 
-            case "*":
-                System.out.println(eo + "* \n Результат операции: " + (numberOne * numberTwo));
+            case '*':
+                System.out.println(eo + " * Результат операции: " + (numberOne * numberTwo));
                 break;
-            case "/":
-                System.out.println(eo + "/ \n Результат операции: " + (numberOne / numberTwo));
+            case '/':
+                System.out.println(eo + " /  Результат операции: " + (numberOne / numberTwo));
                 break;
-            case "+":
-                System.out.println(eo + "+ \n Результат операции: " + (numberOne + numberTwo));
+            case '+':
+                System.out.println(eo + " + Результат операции: " + (numberOne + numberTwo));
                 break;
-            case "-":
-                System.out.println(eo + "- \n Результат операции: " + (numberOne - numberTwo));
+            case '-':
+                System.out.println(eo + " - Результат операции: " + (numberOne - numberTwo));
                 break;
-            case "%":
-                System.out.println(eo + "- \n Результат операции: " + (numberOne % numberTwo));
+            case '%':
+                System.out.println(eo + " %  Результат операции: " + (numberOne % numberTwo));
                 break;
-            case "^":
-                System.out.println(eo + "^ \n Результат операции: " + (doExponent(numberOne, numberTwo)));
+            case '^':
+                System.out.println(eo + " ^  Результат операции: " + (doExponent(numberOne, numberTwo)));
                 break;
             default:
-                System.out.println("\n Задайте действительный знаки!");
+                System.out.println("Задайте действительный знаки!");
         }
     }
 
