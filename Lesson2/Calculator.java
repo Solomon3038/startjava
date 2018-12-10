@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Calculator {
 
     Scanner scan = new Scanner(System.in);
@@ -28,6 +29,9 @@ public class Calculator {
                 System.out.println(eo + "+ \n Результат операции: " + (numberOne + numberTwo));
                 break;
             case "-":
+                System.out.println(eo + "- \n Результат операции: " + (numberOne - numberTwo));
+                break;
+            case "%":
                 System.out.println(eo + "- \n Результат операции: " + (numberOne % numberTwo));
                 break;
             case "^":
