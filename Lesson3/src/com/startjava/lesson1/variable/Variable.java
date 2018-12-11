@@ -1,3 +1,5 @@
+package com.startjava.lesson1.variable;
+
 public class Variable {
     public static void main(String[] args) {
         int processor = 1;  // 32 bit
@@ -19,4 +21,3 @@ public class Variable {
 
     }
 }
-

@@ -1,7 +1,7 @@
+package com.startjava.lesson1.calculator;
+
 public class Calk {
     public static void main(String[] args) {
-        MathStepen mathStepen = new MathStepen();
-
         int num1 = 3;
         System.out.println(num1);
         int num2 = 3;
@@ -31,5 +31,3 @@ public class Calk {
         }
     }
 }
-
-

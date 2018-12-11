@@ -1,5 +1,9 @@
+package com.startjava.lesson2_3.game;
+
 import java.util.Scanner;
-public class GuessNumber1 {
+import com.startjava.lesson2_3.game.Player;
+
+public class GuessNumber {
 
     private Player firstPlayer;
     private Player secondPlayer;
@@ -7,7 +11,7 @@ public class GuessNumber1 {
     private boolean isWinnerWasDetected;
     Scanner s = new Scanner(System.in);
 
-    public GuessNumber1(Player player1, Player player2) {
+    public GuessNumber(Player player1, Player player2) {
         this.firstPlayer = player1;
         this.secondPlayer = player2;
     }

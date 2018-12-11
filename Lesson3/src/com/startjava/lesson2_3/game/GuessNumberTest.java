@@ -1,5 +1,10 @@
+package com.startjava.lesson2_3.game;
+
 import java.util.Scanner;
-public class GuessNumberTest {
+import com.startjava.lesson2_3.game.GuessNumber;
+import com.startjava.lesson2_3.game.Player;
+
+public class GuessNumberTest{
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String input = "";

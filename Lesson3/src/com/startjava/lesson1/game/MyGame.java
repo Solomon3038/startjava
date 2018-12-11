@@ -1,3 +1,5 @@
+package com.startjava.lesson1.game;
+
 public class MyGame {
     public static void main(String[] args) {
         int userNumber = 15;
@@ -18,5 +20,3 @@ public class MyGame {
         System.out.println("Вы угадали!");
     }
 }
-
-

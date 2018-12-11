@@ -1,3 +1,7 @@
+package com.startjava.lesson2_3.robot;
+
+import com.startjava.lesson2_3.robot.Jaeger;
+
 public class JaegerTest {
     public static void main(String[] args) {
         Jaeger gipsy = new Jaeger();
@@ -13,7 +17,7 @@ public class JaegerTest {
         gipsy.useVorteCannon();
         gipsy.move();
         gipsy.drift();
-        gipsy.scanKaiju(" Hello");
+        System.out.println(gipsy.scanKaiju());
 
       /* Jaeger striker = new Jaeger("Striker", "Mark-5","Australia", 250,1850f, 10, 10, 9);
      Jaeger gipsy = new Jaeger("Gipsy","Mark-3","USA",260, 1.980f, 7, 8, 6);*/
@@ -29,33 +33,39 @@ public class JaegerTest {
         striker.setStrenght(10);
 
 
-        System.out.println(striker.getArmor());
+
+
+        /*System.out.println(striker.getArmor());
         System.out.println(striker.getSpeed());
         System.out.println(striker.getModelName());
         System.out.println(striker.getWeight());
         System.out.println(striker.getHeight());
         System.out.println(striker.getMark());
         System.out.println(striker.getOrigin());
-        System.out.println(striker.getStrenght());
+        System.out.println(striker.getStrenght());*/
 
 
-        System.out.println("     ");
-        System.out.println("     ");
+        System.out.println("  ");
+        System.out.println("  ");
 
 
-        System.out.println(gipsy.getArmor());
+        System.out.println(striker);
+        System.out.println(gipsy);
+
+        /*System.out.println(gipsy.getArmor());
         System.out.println(striker.getSpeed());
         System.out.println(gipsy.getModelName());
         System.out.println(gipsy.getWeight());
         System.out.println(gipsy.getHeight());
         System.out.println(gipsy.getMark());
         System.out.println(gipsy.getOrigin());
-        System.out.println(gipsy.getStrenght());
+        System.out.println(gipsy.getStrenght());*/
 
         gipsy.move();
-        gipsy.scanKaiju(" ");
+        System.out.println(striker.scanKaiju());
         gipsy.drift();
         gipsy.useVorteCannon();
 
     }
 }
+

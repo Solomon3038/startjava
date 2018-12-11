@@ -1,6 +1,7 @@
+package com.startjava.lesson1.conditional;
+
 public class ConditionalStatement {
     public static void main(String[] args) {
-
         int myAge = 20;
         double tall = 1.70;
         boolean isFemale = true;
@@ -35,4 +36,3 @@ public class ConditionalStatement {
         }
     }
 }
-

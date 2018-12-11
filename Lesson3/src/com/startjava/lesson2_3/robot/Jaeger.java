@@ -1,3 +1,5 @@
+package com.startjava.lesson2_3.robot;
+
 public class Jaeger {
     private String modelName;
     private String mark;
@@ -89,25 +91,40 @@ public class Jaeger {
 
     public void setArmor(int armor) {
         this.armor = armor;
-        
+
     }
 
-    boolean drift() {
+    public void  drift() {
         System.out.println("Вы вошли в дрифт");
-        return true;
+
     }
 
-    void move() {
+    public void move() {
         System.out.println("Вы прошли 5 шагов");
     }
 
 
-    String scanKaiju(String str) {
-        System.out.println("nothing");
-        return "";
+    String scanKaiju() {
+        return "nothing";
     }
 
-    void useVorteCannon() {
+    public void useVorteCannon() {
+
         System.out.println("The Vortex is ready to shoot");
     }
+
+    @Override
+    public String toString() {
+        return "Jaeger{" +
+                "modelName='" + modelName + '\'' +
+                ", mark='" + mark + '\'' +
+                ", origin='" + origin + '\'' +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", speed=" + speed +
+                ", strenght=" + strenght +
+                ", armor=" + armor +
+                '}';
+    }
 }
+
