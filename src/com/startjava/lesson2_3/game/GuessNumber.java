@@ -1,14 +1,18 @@
 package com.startjava.lesson2_3.game;
 
-import java.util.Scanner;
+
 import com.startjava.lesson2_3.game.Player;
+import java.util.Scanner;
 
 public class GuessNumber {
 
     private Player firstPlayer;
     private Player secondPlayer;
     private int randomValue;
-    private boolean isWinnerWasDetected;
+    /*private boolean isWinnerWasDetected;*/
+    private int[] playersInput;
+    private int tryCnt;
+
     Scanner s = new Scanner(System.in);
 
     public GuessNumber(Player player1, Player player2) {
@@ -21,12 +25,15 @@ public class GuessNumber {
         System.out.println(randomValue);
         System.out.println("We have random integer in range [" + " 0" + ", " + " 100" + "]");
 
-        while (!isWinnerWasDetected) {
+        while (tryCnt <= 2) {
+            tryCnt++;
             inputNumber(firstPlayer);
             inputNumber(secondPlayer);
             guess(firstPlayer);
             guess(secondPlayer);
         }
+        firstPlayer.getPlayersInput();
+        secondPlayer.getPlayersInput();
     }
 
     private int getRandomInRange(int min, int max) {
@@ -35,13 +42,15 @@ public class GuessNumber {
 
     private void inputNumber(Player player) {
         System.out.print(player.getName() + ", enter your suggestion: ");
-        player.setValue(s.nextInt());
+        int input = s.nextInt();
+        player.setValue(input);
+        player.setValu(input, tryCnt - 1);
     }
 
     private void guess(Player player) {
         if (player.getValue() == randomValue) {
             System.out.println(secondPlayer.getName() + " is the winner");
-            isWinnerWasDetected = true;
+            /*isWinnerWasDetected = true;*/
         } else if (player.getValue() > randomValue) {
             System.out.println(player.getName() + " wrote value which is bigger than randomValue");
         } else {
