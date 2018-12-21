@@ -8,9 +8,9 @@ public class GuessNumberTest {
         String input = "";
         do {
             System.out.print("First Player enter the Name ");
-            Player firstPlayer = new Player(s.nextLine(),10);
+            Player firstPlayer = new Player(s.nextLine(), 10);
             System.out.print("Second Player enter the Name ");
-            Player secondPlayer = new Player(s.nextLine(),10);
+            Player secondPlayer = new Player(s.nextLine(), 10);
             GuessNumber guessNumber = new GuessNumber(firstPlayer, secondPlayer);
             guessNumber.start();
             do {
