@@ -2,17 +2,17 @@ package com.startjava.lesson2_3.game;
 
 import java.util.Scanner;
 
-public class GuessNumberTest{
+public class GuessNumberTest {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String input = "";
 
-            Player firstPlayer= new Player("",10);
-            Player secondPlayer = new Player("",10);
+        Player firstPlayer = new Player(10);
+        Player secondPlayer = new Player(10);
         do {
-            System.out.println("First Player enter the Name ");
+            System.out.print("First Player enter the Name ");
             firstPlayer.setName(s.nextLine());
-            System.out.println("Second Player enter the Name");
+            System.out.print("Second Player enter the Name aa");
             secondPlayer.setName(s.nextLine());
             GuessNumber guessNumber = new GuessNumber(firstPlayer, secondPlayer);
             guessNumber.start();

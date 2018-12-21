@@ -3,14 +3,15 @@ package com.startjava.lesson2_3.game;
 
 import java.util.Arrays;
 
+import java.util.Arrays;
+
 public class Player {
     private String name;
     private int value;
     private int[] playersInput;
     private int tryCnt;
 
-    public Player(String name, int tryCnt) {
-        this.name = name;
+    public Player(int tryCnt) {
         playersInput = new int[tryCnt];
     }
 

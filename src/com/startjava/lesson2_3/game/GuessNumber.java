@@ -17,7 +17,6 @@ public class GuessNumber {
 
     public void start() {
         randomValue = getRandomInRange(0, 100);
-        System.out.println(randomValue);
         System.out.println("У вас 10 попыток");
         System.out.println("We have random integer in range [" + " 0" + ", " + " 100" + "]");
 
@@ -36,7 +35,7 @@ public class GuessNumber {
         secondPlayer.getPlayerInput();
         System.out.println();
 
-        if (attempts == 2 && !isWinnerWasDetected) {
+        if (attempts == 10 && !isWinnerWasDetected) {
             System.out.println("у игрока  " + firstPlayer.getName() + " закночились попытки");
             System.out.println("у игрока  " + secondPlayer.getName() + " закночились попытки");
         }
