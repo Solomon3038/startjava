@@ -1,5 +1,3 @@
-package com.startjava.lesson2_3.game;
-
 import java.util.Scanner;
 
 public class GuessNumber {
@@ -8,6 +6,7 @@ public class GuessNumber {
     private Player secondPlayer;
     private int randomValue;
     private int attempts;
+    private boolean isWinnerWasDetected = false;
 
     Scanner s = new Scanner(System.in);
 
@@ -22,17 +21,26 @@ public class GuessNumber {
         System.out.println("У вас 10 попыток");
         System.out.println("We have random integer in range [" + " 0" + ", " + " 100" + "]");
 
-        while (attempts < 10) {
+        while (!isWinnerWasDetected && attempts != 10) {
             attempts++;
             inputNumber(firstPlayer);
             inputNumber(secondPlayer);
             guess(firstPlayer);
             guess(secondPlayer);
         }
+
+        System.out.print(firstPlayer.getName() + "  player input numbers: ");
         firstPlayer.getPlayerInput();
         System.out.println();
+        System.out.print(secondPlayer.getName() + "  player input numbers: ");
         secondPlayer.getPlayerInput();
         System.out.println();
+
+        if (attempts == 2 && !isWinnerWasDetected) {
+            System.out.println("у игрока  " + firstPlayer.getName() + " закночились попытки");
+            System.out.println("у игрока  " + secondPlayer.getName() + " закночились попытки");
+        }
+
         firstPlayer.setTryToZero();
         secondPlayer.setTryToZero();
     }
@@ -49,10 +57,11 @@ public class GuessNumber {
 
     private void guess(Player player) {
         if (player.getValue() == randomValue) {
-            System.out.println(secondPlayer.getName() + " is the winner");
+            System.out.println("Игрок " + player.getName() + " угадал число " + randomValue + " с " + attempts + " попытки");
+            isWinnerWasDetected = true;
         } else if (player.getValue() > randomValue) {
             System.out.println(player.getName() + " wrote value which is bigger than randomValue");
-        } else {
+        } else if (player.getValue() < randomValue) {
             System.out.println(player.getName() + " wrote value which is less than randomValue");
         }
     }

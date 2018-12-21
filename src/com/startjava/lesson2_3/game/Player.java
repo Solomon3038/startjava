@@ -20,6 +20,12 @@ public class Player {
         this.tryCnt++;
     }
 
+    //В другой версии этого метода:
+    //1. Параметр 1: массив, в котором нужно изменить значение некоторых элементов;
+    // 2. Параметр 2: индекс, начиная с которого нужно менять (в нашем случае 0); inclusive
+    // 3. Параметр 3: индекс, до которого нужно менть (в нашем случае tryCnt); exclusive
+    // 4. Параметр 4: значение, которым хотим заполнить каждый элемент диапазона
+
     public void setTryToZero() {
         Arrays.fill(playersInput, 0, tryCnt, 0);
         tryCnt = 0;
@@ -36,7 +42,7 @@ public class Player {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     public String getName() {
         return this.name;
     }

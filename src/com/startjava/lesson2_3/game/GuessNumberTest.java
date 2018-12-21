@@ -7,8 +7,8 @@ public class GuessNumberTest{
         Scanner s = new Scanner(System.in);
         String input = "";
 
-            Player firstPlayer= new Player("",2);
-            Player secondPlayer = new Player("",2);
+            Player firstPlayer= new Player("",10);
+            Player secondPlayer = new Player("",10);
         do {
             System.out.println("First Player enter the Name ");
             firstPlayer.setName(s.nextLine());
