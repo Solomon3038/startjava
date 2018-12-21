@@ -3,15 +3,14 @@ package com.startjava.lesson2_3.game;
 
 import java.util.Arrays;
 
-import java.util.Arrays;
-
 public class Player {
     private String name;
     private int value;
     private int[] playersInput;
     private int tryCnt;
 
-    public Player(int tryCnt) {
+    public Player(String name, int tryCnt) {
+        this.name = name;
         playersInput = new int[tryCnt];
     }
 
@@ -33,7 +32,7 @@ public class Player {
     }
 
     public int[] getPlayerInput() {
-        int[] copy=Arrays.copyOf(playersInput, tryCnt);
+        int[] copy = Arrays.copyOf(playersInput, tryCnt);
         for (int i = 0; i < copy.length; i++)
             System.out.print(copy[i] + " ");
         return playersInput;
