@@ -8,10 +8,11 @@ public class CalculatorTest {
         System.out.println("Добро пожаловать в Java калькулятор");
         System.out.println(" Задайте пожалуйста два числа ");
         String answer = "yes";
+        Scanner s = new Scanner(System.in);
+        Calculator calculator = new Calculator();
 
         while (answer.equals("yes")) {
-            Scanner s = new Scanner(System.in);
-            Calculator calculator = new Calculator();
+
             System.out.print(" Введите математическое выражение через пробел : ");
             String matOp = s.nextLine();
             String[] words = matOp.split("\\s");
@@ -26,7 +27,7 @@ public class CalculatorTest {
             calculator.calculate();
             do {
                 System.out.println("Do you want to continue [yes/no]?");
-                answer = s.next();
+                answer = s.nextLine();  //next() считывает строку до первого пробела или энтера
             } while (!answer.equals("yes") && !answer.equals("no"));
         }
     }
