@@ -5,24 +5,25 @@ import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        Calculator calculator = new Calculator();
         System.out.println("Добро пожаловать в Java калькулятор");
         System.out.println(" Задайте пожалуйста два числа ");
         String answer = "yes";
 
         while (answer.equals("yes")) {
-            System.out.print(" Введите первое число ");
-            int numberOne = s.nextInt();
+            Scanner s = new Scanner(System.in);
+            Calculator calculator = new Calculator();
+            System.out.print(" Введите математическое выражение через пробел : ");
+            String matOp = s.nextLine();
+            String[] words = matOp.split("\\s");
+            String firstNumber = words[0];
+            String secondNumber = words[2];
+            int numberOne = Integer.parseInt(firstNumber);
+            int numberTwo = Integer.parseInt(secondNumber);
             calculator.setNumberOne(numberOne);
-            System.out.print(" Введите знак математической операции: (*,/,+,-,%,^)");
-            char operation = s.next().charAt(0);
+            char operation = words[1].charAt(0);
             calculator.setOperation(operation);
-            System.out.print("Введите второе число:");
-            int numberTwo = s.nextInt();
             calculator.setNumberTwo(numberTwo);
             calculator.calculate();
-
             do {
                 System.out.println("Do you want to continue [yes/no]?");
                 answer = s.next();
