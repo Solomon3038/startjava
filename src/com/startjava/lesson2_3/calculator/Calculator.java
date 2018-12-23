@@ -40,18 +40,17 @@ public class Calculator {
                 System.out.println(eo + " %  Результат операции: " + (numberOne % numberTwo));
                 break;
             case '^':
-                System.out.println(eo + " ^  Результат операции: " + (doExponent(numberOne, numberTwo)));
+                System.out.println(eo + " ^  Результат операции: " + (Math.pow(numberOne, numberTwo)));
                 break;
             default:
                 System.out.println("Задайте действительный знаки!");
         }
     }
-
-    public int doExponent(int xe, int xo) {
+   /* public int doExponent(int xe, int xo) {
         int result = 1;
         for (int i = 0; i < xo; i++) {
             result = result * xe;
         }
         return result;
-    }
+    }*/
 }
