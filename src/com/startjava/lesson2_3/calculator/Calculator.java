@@ -46,11 +46,4 @@ public class Calculator {
                 System.out.println("Задайте действительный знаки!");
         }
     }
-   /* public int doExponent(int xe, int xo) {
-        int result = 1;
-        for (int i = 0; i < xo; i++) {
-            result = result * xe;
-        }
-        return result;
-    }*/
 }
