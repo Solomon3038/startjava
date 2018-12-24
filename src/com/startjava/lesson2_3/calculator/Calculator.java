@@ -20,27 +20,27 @@ public class Calculator {
     }
 
     public void calculate() {
-        String eo = "Вы выбрали операцию ";
+        String message = "Вы выбрали операцию ";
 
         switch (operation) {
 
             case '*':
-                System.out.println(eo + " * Результат операции: " + (numberOne * numberTwo));
+                System.out.println(message + " * Результат операции: " + (numberOne * numberTwo));
                 break;
             case '/':
-                System.out.println(eo + " /  Результат операции: " + (numberOne / numberTwo));
+                System.out.println(message + " /  Результат операции: " + (numberOne / numberTwo));
                 break;
             case '+':
-                System.out.println(eo + " + Результат операции: " + (numberOne + numberTwo));
+                System.out.println(message + " + Результат операции: " + (numberOne + numberTwo));
                 break;
             case '-':
-                System.out.println(eo + " - Результат операции: " + (numberOne - numberTwo));
+                System.out.println(message + " - Результат операции: " + (numberOne - numberTwo));
                 break;
             case '%':
-                System.out.println(eo + " %  Результат операции: " + (numberOne % numberTwo));
+                System.out.println(message + " %  Результат операции: " + (numberOne % numberTwo));
                 break;
             case '^':
-                System.out.println(eo + " ^  Результат операции: " + (Math.pow(numberOne, numberTwo)));
+                System.out.println(message + " ^  Результат операции: " + (Math.pow(numberOne, numberTwo)));
                 break;
             default:
                 System.out.println("Задайте действительный знаки!");
