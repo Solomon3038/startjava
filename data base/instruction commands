@@ -1,0 +1,8 @@
+\i MYFILEWITHCOMMANDS.sql
+
+
+sudo -u postgres psql MYDB
+
+
+
+psql -f thefile.sql targetdatabase
