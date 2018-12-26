@@ -1,16 +1,13 @@
 CREATE DATABASE dbname;
 
-
-
-
-create table jaegers (
-id serial primary key,
-modelName varchar(256) not null,
-mark varchar(256) not null,
-height integer,
-weight real,
-status varchar(256) not null,
-origin varchar(256),
-launch date,
-kaijukill integer not null
+CREATE TABLE jaegers (
+  id SERIAL PRIMARY KEY,
+  modelName VARCHAR(256) NOT NULL,
+  mark      VARCHAR(256) NOT NULL,
+  height    INTEGER,
+  weight    REAL,
+  status    VARCHAR(256) NOT NULL,
+  origin    VARCHAR(256),
+  launch    DATE,
+  kaijukill INTEGER      NOT NULL
 );

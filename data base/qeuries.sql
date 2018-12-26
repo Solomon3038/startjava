@@ -1,46 +1,66 @@
+DROP TABLE jaegers;
 
-drop table jaegers;
-
-SELECT * FROM Jaegers;
-
-
-SELECT STATUS FROM Jaegers;
+SELECT *
+FROM Jaegers;
 
 
- SELECT * FROM Jaegers WHERE STATUS NOT LIKE 'Not Destr%';
+SELECT STATUS
+FROM Jaegers;
 
 
-select * from jaegers where mark like 'Mark-%' and int(substring(mark from 6 for length(mark) - 5)) between 1 and 6;
-
-select modelName from jaegers where mark in ('Mark-1', 'Mark-6');
-
-
-
-select * from jaegers order by mark desc;
+SELECT *
+FROM Jaegers
+WHERE STATUS NOT LIKE 'Not Destr%';
 
 
+SELECT *
+FROM jaegers
+WHERE mark LIKE 'Mark-%' AND int(substring(mark FROM 6 FOR length(mark) - 5)) BETWEEN 1 AND 6;
 
-select * from jaegers order by launch limit 1;
-
-
-SELECT avg(weight) from jaegers;
-
-select * from jaegers where kaijukill in (select max(kaijukill) from jaegers);
-select * from jaegers where kaijukill in (select min(kaijukill) from jaegers);
-
-update jaegers set kaijuKill = kaijuKill + 1 where status <> 'Destroyed';
+SELECT modelName
+FROM jaegers
+WHERE mark IN ('Mark-1', 'Mark-6');
 
 
-delete from jaegers where status = 'Destroyed';
+SELECT *
+FROM jaegers
+ORDER BY mark DESC;
 
 
+SELECT *
+FROM jaegers
+ORDER BY launch
+LIMIT 1;
 
 
-SELECT avg(weight)  as parametr from jaegers where weight is not NULL;
+SELECT avg(weight)
+FROM jaegers;
 
-update jaegers set status = 'Not destroyed' where id in (1, 3, 5);
+SELECT *
+FROM jaegers
+WHERE kaijukill IN (SELECT max(kaijukill)
+                    FROM jaegers);
+SELECT *
+FROM jaegers
+WHERE kaijukill IN (SELECT min(kaijukill)
+                    FROM jaegers);
+
+UPDATE jaegers
+SET kaijuKill = kaijuKill + 1
+WHERE status <> 'Destroyed';
 
 
+DELETE FROM jaegers
+WHERE status = 'Destroyed';
+
+
+SELECT avg(weight) AS parametr
+FROM jaegers
+WHERE weight IS NOT NULL;
+
+UPDATE jaegers
+SET status = 'Not destroyed'
+WHERE id IN (1, 3, 5);
 
 
 
